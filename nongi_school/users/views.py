@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm, ProfileForm
+from .models import SubjectMarks, Subject, Student, Profile
 
 
 def register(request):
@@ -65,3 +66,37 @@ def edit_profile(request):
         'p_form': p_form
     }
     return render(request, 'users/edit_profile.html', context)
+
+
+def marks_list(request):
+    marks = SubjectMarks.objects.all()
+    res = []
+    for mark in marks:
+        if mark.student.profile.user == request.user:
+            res.append(mark)
+    return render(request, 'users/marks_list.html', {'marks': res})
+
+
+@login_required
+def add_marks(request):
+    print('abbabaa')
+    if request.method == 'POST':
+        mark = request.POST.get('mark')
+        subject = request.POST.get('subject')
+        student = Student.objects.get(profile=Profile.objects.get(user=request.user))
+        SubjectMarks.objects.create(mark=mark, subject=Subject.objects.create(name=subject), student=student)
+        return redirect('add_marks')
+    else:
+        marks = SubjectMarks.objects.all()
+        subject = list(Subject.objects.all())
+        res = []
+        for mark in marks:
+            if mark.student.profile.user == request.user:
+                res.append(mark)
+                if mark.subject.name in [s.name for s in subject]:
+                    subject.remove(mark.subject)
+        context = {
+            'marks': res,
+            'subjects': subject
+        }
+        return render(request, 'users/add_marks.html', context)

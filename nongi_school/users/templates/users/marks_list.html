@@ -1,0 +1,33 @@
+{% extends "leader_board/index.html" %}
+{% load static %}
+{% block content %}
+<div class="card mb-3 border-0 nth-shadow">
+    <div class="card-body">
+        <div class="card-title nth-card-title">
+            <h4>Текущие отметки</h4>
+        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Предмет</th>
+                <th scope="col">Оценка</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for x in marks %}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{ x.subject }}</td>
+                <td>{{ x.mark }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <p>
+            <a href="/add_marks">Добавить оценки</a>
+        </p>
+    </div>
+</div>
+{% endblock content %}

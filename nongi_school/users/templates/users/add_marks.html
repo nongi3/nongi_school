@@ -1,0 +1,42 @@
+{% extends "leader_board/index.html" %}
+{% load static %}
+{% block content %}
+
+<h1>Изменить оценку</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Предмет</th>
+        <th scope="col">Оценка</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for x in marks %}
+    <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{ x.subject }}</td>
+        <td>{{ x.mark }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<h1>Добавить оценку</h1>
+
+<form action="{% url 'add_marks' %}" method="post">
+    {% csrf_token %}
+    <h2>Предмет</h2>
+    <div class="form-group col-md-12 mb-3">
+        <select name="subject">
+        {% for subject in subjects %}
+            <option value="{{ subject }}">{{ subject }}</option>
+        {% endfor %}
+        </select>
+    </div>
+    <h2>Оценка</h2>
+    <input type="number" min="2" max="5" name="mark">
+    <br><br>
+    <input type="submit" value="Добавить">
+</form>
+
+{% endblock content %}
