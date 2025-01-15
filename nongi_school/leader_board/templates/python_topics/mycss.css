@@ -1,0 +1,151 @@
+a.nav_left {
+	color: black;
+	background-color: white;
+}
+
+a.nav_left:hover,
+a.nav_left:focus {
+	color: black;
+    background-color: white;
+}
+
+.nav_left_active {
+	color: whitesmoke;
+    background-color: #656565;
+    border-color: white;
+}
+
+.nav_left_active:hover,
+.nav_left_active:focus {
+	color: whitesmoke;
+    background-color: #656565;
+    border-color: white;
+}
+
+dt {
+    text-decoration: underline;
+}
+
+dd {
+    text-indent: 20px;
+}
+
+span {
+    margin-right: -4px;
+}
+span.comment {
+    color: #708090;
+}
+span.number {
+    color: #905;
+}
+span.string {
+    color: #690;
+}
+
+span.punctuation {
+    color: #999;
+    margin-left: -3px;
+}
+
+span.operator {
+    color: #a67f59;
+}
+
+span.variable {
+    color: #000000;
+}
+
+span.none, span.true, span.false {
+    color: #ff7700;
+}
+span.builtins, span.function {
+    color: #900090;
+}
+
+pre.language_python {
+    margin-right:30%;
+    background: #f5f2f0;
+    padding: 1em;
+    overflow: auto;
+    white-space: pre;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+div.hidden_information {
+    border-left: 2px solid blue;
+    padding-left: 10px;
+}
+
+code {
+    word-spacing: normal;
+    padding: 0;
+    width: 200;
+    height: 200;
+}
+
+div.python-topic {
+    margin-right: 30%;
+}
+
+div.show-language {
+    position: relative;
+}
+
+div.show-language-label {
+    color: #000;
+    background-color: #CFCFCF;
+    display: inline-block;
+    position: absolute;
+    bottom: auto;
+    left: auto;
+    top: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+    font-size: .9em;
+    border-radius: 0 0 0 5px;
+    padding: 0 .5em;
+    text-shadow: none;
+    z-index: 1;
+}
+p.python-topic-data {
+    text-indent: 20px;
+    margin: 0 0 0 0;
+    text-align: justify;
+}
+
+h2.python-course {
+    margin-left: 30px;
+}
+
+h2.python-course::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+
+    width: 25px;
+    height: 30px;
+    background-image: url("../images/before_h2.png");
+}
+
+div.fixed-nav-panel {
+    position: fixed;
+    top: 100;
+    left: 100;
+    color:red;
+    z-index:9999;
+}
+
+span.cpp_comment {
+    color: #236e24;
+}
+
+span.cpp_type, span.cpp_keyword {
+    color: rgb(147, 15, 128);
+}
+
+span.cpp_operator {
+    color: rgb(104, 118, 135);
+}

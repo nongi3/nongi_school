@@ -1,0 +1,370 @@
+{% extends "leader_board/index.html" %}
+{% block content %}
+<div>
+    <div class="python-topic">
+        <h1> Вводная </h1>
+        <h2 class="python-course"> <a name="intro_definition"></a> Определения </h2>
+        <p> Каждое занятие будет начинаться с новых определений, которые будут использоваться в курсе. </p>
+        <dl>
+            <dt> IDLE (читается айдл) </dt>
+            <dd> (Integrated Development and Learning Environment) — это интегрированная среда разработки и обучения
+                на языке Python. <br> Мы будем использовать IDLE для обучения, так как он включает в себя всё необходимое,
+                но не включает в себя надстройки, необходимые более опытным пользователям, что упростит изначальное
+                использование.
+            </dd>
+            <dt> Литерал </dt>
+            <dd> Литерал - это простейший способ создания объектов. <br> Например:<br> </dd>
+            <div class="show-language">
+                <div class="show-language-label"> Python </div>
+            </div>
+            <pre><code><!--
+                --><span class="number"> 1 </span><!--
+                --><span class="comment"> # числовой литерал </span><!--
+            --></code></pre>
+            <div class="show-language">
+                <div class="show-language-label"> Python </div>
+            </div>
+            <pre><code><!--
+                --><span class="string"> "It's a string!" </span><!--
+                --><span class="comment"> # строковый литерал </span><!--
+            --></code></pre>
+            <div class="show-language">
+                <div class="show-language-label"> Python </div>
+            </div>
+            <pre><code><!--
+                --><span class="punctuation"> [ </span><!--
+                --><span class="number">1 </span><!--
+                --><span class="punctuation">, </span><!--
+                --><span class="number">2 </span><!--
+                --><span class="punctuation">, </span><!--
+                --><span class="number">3 </span><!--
+                --><span class="punctuation">, </span><!--
+                --><span class="number">4 </span><!--
+                --><span class="punctuation">] </span><!--
+                --><span class="comment"> # литерал списка </span><!--
+            --></code></pre>
+            <div class="show-language">
+                <div class="show-language-label"> Python </div>
+            </div>
+            <pre><code><!--
+                --><span class="punctuation"> { </span><!--
+                --><span class="number">'a' </span><!--
+                --><span class="punctuation">: </span><!--
+                --><span class="number">1 </span><!--
+                --><span class="punctuation">, </span><!--
+                --><span class="number">'b' </span><!--
+                --><span class="punctuation">: </span><!--
+                --><span class="number">2 </span><!--
+                --><span class="punctuation">, </span><!--
+                --><span class="number">'c' </span><!--
+                --><span class="punctuation">: </span><!--
+                --><span class="number">3 </span><!--
+                --><span class="punctuation">} </span><!--
+                --><span class="comment"> # литерал словаря </span><!--
+            --></code></pre>
+            <dd> Записи выше не имеют смысла сами по себе, с этими литералами можно что-то делать (сравнивать с ними, например) или же присвоить их в качестве значения какой-либо переменной.</dd>
+            <dd> Так, например, можно присвоить значения числого литерала к переменной:</dd>
+            <div class="show-language">
+                <div class="show-language-label"> Python </div>
+            </div>
+            <pre><code>a<!--
+                --><span class="operator"> = </span><!--
+                --><span class="number"> 1 </span><!--
+            --></code></pre>
+            <dt> Константа </dt>
+            <dd> Часто считают, что литерал и константа - это одно и то же, но это не так. <br> Константа - это
+                некоторое понятное имя, в котором записан литерал. Это дает возможность использовать один и тот же литерал,
+                который может быть не очень удобным в использовании сам по себе. Например: <br>
+            </dd>
+            <div class="show-language">
+                <div class="show-language-label"> Python </div>
+            </div>
+            <pre><code>NUMBERS <!--
+                --><span class="operator">= </span><!--
+                --><span class="punctuation"> [ </span><!--
+                --><span class="number">1 </span><!--
+                --><span class="punctuation">, </span><!--
+                --><span class="number">2 </span><!--
+                --><span class="punctuation">, </span><!--
+                --><span class="number">3 </span><!--
+                --><span class="punctuation">, </span><!--
+                --><span class="number">4 </span><!--
+                --><span class="punctuation">] </span><!--
+            --></code></pre>
+            <dd> В питоне нет возможности делать значения неизменяемыми, но общепринято называть константы прописными
+                буквами. </dd>
+            <dt> Переменные </dt>
+            <dd> Изменяемая именованная ссылка на некий объект. </dd>
+            <div class="show-language">
+                <div class="show-language-label"> Python </div>
+            </div>
+            <pre><code>a<!--
+                --><span class="operator"> = </span><!--
+                --><span class="number"> 1 </span><br>b<!--
+                --><span class="operator"> = </span><!--
+                --><span class="number"> 2 </span><br>c<!--
+                --><span class="operator"> = </span>a<!--
+                --><span class="operator"> + </span>b<br><!--
+                --><span class="string">print </span><!--
+                --><span class="operator">(</span> c<!--
+                --><span class="operator">) </span><!--
+                --><span class="comment">  # выведет 3 </span><!--
+            --></code></pre>
+            <dt> Тип данных </dt>
+            <dd> Python относится к языкам с <b><i>неявной сильной динамической типизацией</i></b>. <b>Неявная типизация</b> - не нужно писать какого
+                типа данных та или иная переменная. <br>Например, в Java явная типизация и объявление выглядело бы так: <br></dd>
+            <div class="show-language">
+                <div class="show-language-label"> Java </div>
+            </div>
+            <pre><code>int a<!--
+                --><span class="operator"> = </span><!--
+                --><span class="number"> 1 </span><!--
+            --></code></pre>
+            <dd> В Python аналогичная запись будет без указания типа данных:<br></dd>
+            <div class="show-language">
+                <div class="show-language-label"> Python </div>
+            </div>
+            <pre><code>a<!--
+                --><span class="operator"> = </span><!--
+                --><span class="number"> 1 </span><!--
+            --></code></pre>
+            <dd> <b>Динамическая типизация</b> означает, что тип переменной определяется в процессе выполнения программы.
+            То есть одна и та же переменная могут быть разного типа на разных этапах программы. Например, предыдущая
+                программа могла бы продолжиться следующим образом:</dd>
+            <div class="show-language">
+                <div class="show-language-label"> Python </div>
+            </div>
+            <pre><code>a<!--
+                --><span class="operator"> = </span><!--
+                --><span class="number"> 1 </span><br>...<br>a<!--
+                --><span class="operator"> = </span><!--
+                --><span class="string"> 'Hello' </span><!--
+            --></code></pre>
+            <dd> <b> Сильная типизация </b> не позволяет проводить операции между различными типами данных.<br>
+            В Python нельзя производить сложение чисел и бук, хотя в языках со слабой типизацией, например с++, подобные
+                операции доступны.</dd>
+        </dl>
+        <h2 class="python-course"> <a name="intro_types"> </a> Типы данных </h2>
+        <h3> <a name="intro_builtins"> </a> Встроенные типы данных </h3>
+        <p class="python-topic-data"> Давайте познакомимся с типами данных поближе. Типы данных разделяются на встроенные и не встроенные.<br>
+        Рассмотрим основные встроенные типы данных, с которыми мы столкнемся в ближайшее время:<br></p>
+        <ol>
+            <li> None <br> Неопределенное значение, ничто.</li>
+            <li> Логические переменные <br> В разных источниках может называться bool.<br>
+            Этот тип данных отвечает за истину/ложь.</li>
+            <li> Числа </li>
+            <ul>
+                <li>int - целые числа</li>
+                <li>float - числа с плавающей точкой (дробные) </li>
+            </ul>
+            <li> Строки <br> Также называется str. Служит для работы с символьными данными. </li>
+            <li> Списки </li>
+            <ul>
+                <li>list - список</li>
+                <li>tuple - кортеж </li>
+            </ul>
+            <li> Словари </li>
+            <ul>
+                <li>Dictionary или сокращенно dict. Используются для хранения парных данных и не только.</li>
+            </ul>
+        </ol>
+<!-- Надо подумать на счет этой информации           #TODO 1 -->
+<!--        <p> Типы данных выше представлены по увеличению их размера, объема и сложности. Представим это следующим образом:</p>-->
+<!--        <ul>-->
+<!--            <li> None может быть только самим собой; </li>-->
+<!--            <div class="show-language">-->
+<!--                <div class="show-language-label"> Python </div>-->
+<!--            </div>-->
+<!--            <pre><code>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="variable"> nothing </span>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="operator"> = </span>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="none"> None </span>&lt;!&ndash;-->
+<!--            &ndash;&gt;</code></pre>-->
+<!--            <li> Булевое значение может быть собой и None; </li>-->
+<!--            <div class="show-language">-->
+<!--                <div class="show-language-label"> Python </div>-->
+<!--            </div>-->
+<!--            <pre><code>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="variable"> some_bool_var </span>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="operator"> = </span>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="none"> None </span><br>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="variable"> some_bool_var </span>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="operator"> = </span>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="true"> True </span>&lt;!&ndash;-->
+<!--            &ndash;&gt;</code></pre>-->
+<!--            <li> Целые числа могут принимать пустое значение (None), булевое значение (0/1) и любые целые числа;</li>-->
+<!--            <div class="show-language">-->
+<!--                <div class="show-language-label"> Python </div>-->
+<!--            </div>-->
+<!--            <pre><code>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="variable"> some_int_var </span>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="operator"> = </span>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="none"> None </span><br>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="variable"> some_int_var </span>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="operator"> = </span>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="true"> True </span>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="comment"> # в случае обращения как к числу значение будет равно 1 </span><br>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="variable"> some_int_var </span>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="operator"> = </span>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="number"> 12 </span>&lt;!&ndash;-->
+<!--            &ndash;&gt;</code></pre>-->
+<!--            <li> Аналогично дробные числа включают целые числа и все дробные варианты; </li>-->
+<!--            <div class="show-language">-->
+<!--                <div class="show-language-label"> Python </div>-->
+<!--            </div>-->
+<!--            <pre><code>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="variable"> some_float_var </span>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="operator"> = </span>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="none"> None </span><br>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="variable"> some_float_var </span>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="operator"> = </span>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="true"> True </span><br>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="variable"> some_float_var </span>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="operator"> = </span>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="number"> 12 </span><br>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="variable"> some_float_var </span>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="operator"> = </span>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="number"> 123.4 </span>&lt;!&ndash;-->
+<!--            &ndash;&gt;</code></pre>-->
+<!--            <li> В строки можно записать любые значения, но они будут в ковычках; </li>-->
+<!--            <div class="show-language">-->
+<!--                <div class="show-language-label"> Python </div>-->
+<!--            </div>-->
+<!--            <pre><code>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="comment"> # всё вышеперечисленное применимо к строкам и писать это снова не будем </span><br>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="variable"> some_string_var </span>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="operator"> = </span>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="string"> '123.4' </span>&lt;!&ndash;-->
+<!--                &ndash;&gt;<span class="comment"> # значение переменной будет строковым, а не числовым </span>&lt;!&ndash;-->
+<!--            &ndash;&gt;</code></pre>-->
+<!--            <li> Списки и словари могут содержать в себе любые типы данных, даже другие списки и словари. </li>-->
+<!--        </ul>-->
+<!--end of TODO 1 -->
+        <h3> <a name="intro_convert_type"> </a> Преобразование типов </h3>
+        <p class="python-topic-data"> Для перевода данных из одного типа данных в другой используются специальные ключевые слова. Вы уже могли
+            их видеть - они фигурировали выше. Пример различных переводов: </p><br>
+        <div class="show-language">
+            <div class="show-language-label"> Python </div>
+        </div>
+        <pre><code><!--
+            --><span class="variable">a </span><!--
+            --><span class="operator"> = </span><!--
+            --><span class="number"> 1 </span><!--
+            --><span class="comment"> # на данный момент это число </span><br><!--
+            --><span class="variable">a </span><!--
+            --><span class="operator"> = </span><!--
+            --><span class="builtins"> str </span><!--
+            --><span class="punctuation">( </span><!--
+            --><span class="variable">a </span><!--
+            --><span class="punctuation">) </span><!--
+            --><span class="comment"> # мы сделали значение строкой '1' </span><br><!--
+            --><span class="variable">a </span><!--
+            --><span class="operator"> = </span><!--
+            --><span class="builtins"> int </span><!--
+            --><span class="punctuation">( </span><!--
+            --><span class="variable">a </span><!--
+            --><span class="punctuation">) </span><!--
+            --><span class="comment"> # мы снова сделали значение числовым и оно равно 1 </span><br><!--
+            --><span class="variable">a </span><!--
+            --><span class="operator"> = </span><!--
+            --><span class="builtins"> float </span><!--
+            --><span class="punctuation">( </span><!--
+            --><span class="variable">a </span><!--
+            --><span class="punctuation">) </span><!--
+            --><span class="comment"> # а теперь оно дробное и равно 1.0 </span><!--
+        --></code></pre>
+        <p class="python-topic-data"> В зависимости от того, что мы планируем делать со значением дальше, можно выбрать удобный тип данных для
+            хранения и обработки содержимого. </p>
+        <h2 class="python-course"> <a name="intro_first_function"></a> Первые функции </h2>
+        <p class="python-topic-data"> Подробнее само понятие функции и о том, как создать свою функцию, мы поговорим совсем скоро. Но для того,
+        чтобы сделать свои первые шаги в питоне нам понадобится знание о простейших встроенных функциях: ввода и вывода.
+        </p>
+        <h3><a name="intro_print"></a> Функция print </h3>
+        <p class="python-topic-data"> Print может принимать одно или несколько значений и выводить их. Например:</p>
+        <div class="show-language">
+            <div class="show-language-label"> Python </div>
+        </div>
+        <pre><code><!--
+            --><span class="variable">a </span><!--
+            --><span class="punctuation"> = </span><!--
+            --><span class="number"> 1 </span><br><!--
+            --><span class="function">print </span><!--
+            --><span class="punctuation">( </span><!--
+            --><span class="variable">a </span><!--
+            --><span class="punctuation">) </span><!--
+            --><span class="comment"> # вывод будет: "1" </span><br><!--
+            --><span class="function">print </span><!--
+            --><span class="punctuation">( </span><!--
+            --><span class="variable">a </span><!--
+            --><span class="punctuation">, </span><!--
+            --><span class="number">2 </span><!--
+            --><span class="punctuation">, </span><!--
+            --><span class="string">'some other data' </span><!--
+            --><span class="punctuation">)</span><!--
+            --><span class="comment"> # вывод будет: "1 2 some other data" </span><br><!--
+            --><span class="variable">b </span><!--
+            --><span class="punctuation"> = </span><!--
+            --><span class="number"> 3 </span><br><!--
+            --><span class="function">print </span><!--
+            --><span class="punctuation">( </span><!--
+            --><span class="variable">a </span><!--
+            --><span class="punctuation">, </span><!--
+            --><span class="variable">b </span><!--
+            --><span class="punctuation">) </span><!--
+            --><span class="comment"> # вывод будет: "1 3" </span><!--
+        --></code></pre>
+
+        <div id="print_info" class="hidden_information" style="display:none;">
+            <p class="python-topic-data">Немного дополнительной информации о print. В общем случае функция выглядит следующим образом: </p>
+            <p>print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)</p>
+            <p class="python-topic-data"> Первый параметр: value - значение, которое будет выводиться. В примере выше мы показали, что значений
+            может быть несколько, о чем и говорит знак многоточия.</p>
+            <p class="python-topic-data"> Следующий параметр: sep=' ' - разделитель (от слова separator), который будет выводиться между
+                значениями функции.По умолчанию этот разделитель равен пробелу, но иногда нужно, чтобы это было иначе.
+                Например:</p>
+            <div class="show-language">
+                <div class="show-language-label"> Python </div>
+            </div>
+            <pre><code><!--
+                --><span class="function">print</span><!--
+                --><span class="punctuation"> ( </span><!--
+                --><span class="variable">1 </span><!--
+                --><span class="punctuation">, </span><!--
+                --><span class="variable">2 </span><!--
+                --><span class="punctuation">, </span><!--
+                --><span class="variable">3 </span><!--
+                --><span class="punctuation">, </span><!--
+                --><span class="variable">sep </span><!--
+                --><span class="operator">= </span><!--
+                --><span class="string">'\n' </span><!--
+                --><span class="punctuation"> ) </span><!--
+                --><span class="comment"> # вывод будет: <br> 1 </span><br><!--
+                --><span class="comment"> 2 </span><br><!--
+                --><span class="comment"> 3 </span><!--
+            --></code></pre>
+        </div>
+
+        <button id="print_info_1"
+                onclick="document.getElementById('print_info').style.display='block';
+                        document.getElementById('print_info_1').style.display='none';
+                        document.getElementById('print_info_2').style.display='block';">
+            Показать дополнительную информацию о print </button>
+
+        <button id="print_info_2"
+                onclick=" document.getElementById('print_info').style.display='none';
+                        document.getElementById('print_info_2').style.display='none';
+                        document.getElementById('print_info_1').style.display='block';"
+                style="display:none;">Скрыть</button>
+        <h2 class="python-course"> <a name="intro_tasks"></a> Задачи </h2>
+        <ol>
+        {% for problem in problems %}
+            <b><li>{{ problem.name }}</li></b>
+            <p> {{ problem.description }} </p>
+            <p> <b>Входные данные:</b><br>{{ problem.input_data }} </p>
+            <p> <b>Выходные данные:</b><br>{{ problem.output_data }} </p>
+        {% endfor %}
+        </ol>
+    </div>
+</div>
+
+{% endblock content %}
